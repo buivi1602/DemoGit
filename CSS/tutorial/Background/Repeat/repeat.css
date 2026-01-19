@@ -3,15 +3,14 @@
 <head>
 <style>
 body {
-  background-color: lightblue;
+  background-image: url("gradient_bg.png");
 }
 </style>
 </head>
 <body>
 
 <h1>Hello World!</h1>
-
-<p>Bùi Thị Hà Vi</p>
+<p>Strange background image...</p>
 
 </body>
 </html>
