@@ -1,0 +1,43 @@
+@model IEnumerable<FirstWebMVC.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách Person</h1>
+
+<!-- Thông báo -->
+@if (TempData["msg"] != null)
+{
+    <p style="color:green">@TempData["msg"]</p>
+}
+
+<p>
+    <a asp-action="Create">Create New</a> |
+    <a asp-action="ImportExcel" class="btn btn-primary">Import Excel</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>PersonId</th>
+            <th>@Html.DisplayNameFor(model => model.FullName)</th>
+            <th>@Html.DisplayNameFor(model => model.Address)</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.PersonId</td>
+            <td>@item.FullName</td>
+            <td>@item.Address</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PersonId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
