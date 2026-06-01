@@ -7,7 +7,6 @@ C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\obj\Debug\net10.0\First
 C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\obj\Debug\net10.0\FirstWebMVC.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\obj\Debug\net10.0\FirstWebMVC.RazorAssemblyInfo.cache
 C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\obj\Debug\net10.0\FirstWebMVC.RazorAssemblyInfo.cs
-C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\obj\Debug\net10.0\FirstWebMVC.sourcelink.json
 C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\bin\Debug\net10.0\appsettings.json
 C:\Users\ADMINN\OneDrive\Documents\BT PTPMQL\FirstWebMVC\bin\Debug\net10.0\FirstWebMVC.staticwebassets.runtime.json

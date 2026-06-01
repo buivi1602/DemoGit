@@ -1,0 +1,43 @@
+@model IEnumerable<FirstWebMVC.Models.DeviceCategory>
+
+@{
+    ViewData["Title"] = "Quản lý loại thiết bị";
+}
+
+<h1>Quản lý loại thiết bị</h1>
+
+<!-- FORM TÌM KIẾM -->
+<form asp-action="Index" method="get">
+    <p>
+        Tìm theo tên: 
+        <input type="text" name="searchString" value="@Context.Request.Query["searchString"]" />
+        <button type="submit">Tìm</button>
+    </p>
+</form>
+
+<p>
+    <a asp-action="Create">+ Thêm mới</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên loại</th>
+            <th>Mô tả</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.CategoryName</td>
+            <td>@item.Description</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoryId">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoryId">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoryId">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

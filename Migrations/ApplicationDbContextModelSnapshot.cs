@@ -15,7 +15,7 @@ namespace FirstWebMVC.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.11");
 
             modelBuilder.Entity("FirstWebMVC.Models.Customer", b =>
                 {
@@ -37,6 +37,102 @@ namespace FirstWebMVC.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("FirstWebMVC.Models.Device", b =>
+                {
+                    b.Property<int>("DeviceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DeviceName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("DeviceId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Devices");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.DeviceCategory", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("DeviceCategories");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ExportDetail", b =>
+                {
+                    b.Property<int>("ExportDetailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DeviceId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ExportId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("ExportPrice")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("ExportReceiptExportId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ExportDetailId");
+
+                    b.HasIndex("DeviceId");
+
+                    b.HasIndex("ExportReceiptExportId");
+
+                    b.ToTable("ExportDetails");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ExportReceipt", b =>
+                {
+                    b.Property<int>("ExportId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ExportCode")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("ExportDate")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ExportId");
+
+                    b.ToTable("ExportReceipts");
+                });
+
             modelBuilder.Entity("FirstWebMVC.Models.Faculty", b =>
                 {
                     b.Property<int>("FacultyId")
@@ -50,6 +146,55 @@ namespace FirstWebMVC.Migrations
                     b.HasKey("FacultyId");
 
                     b.ToTable("Faculties");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ImportDetail", b =>
+                {
+                    b.Property<int>("ImportDetailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DeviceId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ImportId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("ImportPrice")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("ImportReceiptImportId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ImportDetailId");
+
+                    b.HasIndex("DeviceId");
+
+                    b.HasIndex("ImportReceiptImportId");
+
+                    b.ToTable("ImportDetails");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ImportReceipt", b =>
+                {
+                    b.Property<int>("ImportId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("ImportDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SupplierId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ImportId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("ImportReceipts");
                 });
 
             modelBuilder.Entity("FirstWebMVC.Models.Order", b =>
@@ -155,6 +300,88 @@ namespace FirstWebMVC.Migrations
                     b.ToTable("Students");
                 });
 
+            modelBuilder.Entity("FirstWebMVC.Models.Supplier", b =>
+                {
+                    b.Property<int>("SupplierId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("SupplierId");
+
+                    b.ToTable("Suppliers");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.Device", b =>
+                {
+                    b.HasOne("FirstWebMVC.Models.DeviceCategory", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ExportDetail", b =>
+                {
+                    b.HasOne("FirstWebMVC.Models.Device", "Device")
+                        .WithMany()
+                        .HasForeignKey("DeviceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FirstWebMVC.Models.ExportReceipt", "ExportReceipt")
+                        .WithMany("ExportDetails")
+                        .HasForeignKey("ExportReceiptExportId");
+
+                    b.Navigation("Device");
+
+                    b.Navigation("ExportReceipt");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ImportDetail", b =>
+                {
+                    b.HasOne("FirstWebMVC.Models.Device", "Device")
+                        .WithMany()
+                        .HasForeignKey("DeviceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FirstWebMVC.Models.ImportReceipt", "ImportReceipt")
+                        .WithMany("ImportDetails")
+                        .HasForeignKey("ImportReceiptImportId");
+
+                    b.Navigation("Device");
+
+                    b.Navigation("ImportReceipt");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ImportReceipt", b =>
+                {
+                    b.HasOne("FirstWebMVC.Models.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Supplier");
+                });
+
             modelBuilder.Entity("FirstWebMVC.Models.Order", b =>
                 {
                     b.HasOne("FirstWebMVC.Models.Customer", "Customer")
@@ -201,9 +428,19 @@ namespace FirstWebMVC.Migrations
                     b.Navigation("Orders");
                 });
 
+            modelBuilder.Entity("FirstWebMVC.Models.ExportReceipt", b =>
+                {
+                    b.Navigation("ExportDetails");
+                });
+
             modelBuilder.Entity("FirstWebMVC.Models.Faculty", b =>
                 {
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.ImportReceipt", b =>
+                {
+                    b.Navigation("ImportDetails");
                 });
 
             modelBuilder.Entity("FirstWebMVC.Models.Order", b =>
