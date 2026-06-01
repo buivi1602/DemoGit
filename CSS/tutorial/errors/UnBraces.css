@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p.bad {
+  padding: 20px;
+  margin: 10px;
+</style>
+</head>
+<body>
+
+<h2>Error: Unclosed Braces</h2>
+
+<p class="bad">Bùi Thị Hà Vi</p>
+
+</body>
+</html>

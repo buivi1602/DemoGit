@@ -1,0 +1,12 @@
+@model FirstWebMVC.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h1>Student Details</h1>
+
+<p><strong>Code:</strong> @Model.StudentCode</p>
+<p><strong>Name:</strong> @Model.FullName</p>
+
+<a asp-action="Create">Back to Create</a>

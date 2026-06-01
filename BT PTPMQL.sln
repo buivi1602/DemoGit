@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT PTPMQL", "BT PTPMQL.csproj", "{89CF19CE-DF8A-E22A-06FA-30EF3857DDF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoGit", "DemoGit", "{17D4FDEA-06F7-DF6C-15B2-621680D14388}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT PTPMQL", "DemoGit\BT PTPMQL.csproj", "{56B46138-3EF3-CBD7-8552-D4E02BAADEC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89CF19CE-DF8A-E22A-06FA-30EF3857DDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89CF19CE-DF8A-E22A-06FA-30EF3857DDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89CF19CE-DF8A-E22A-06FA-30EF3857DDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89CF19CE-DF8A-E22A-06FA-30EF3857DDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B46138-3EF3-CBD7-8552-D4E02BAADEC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B46138-3EF3-CBD7-8552-D4E02BAADEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B46138-3EF3-CBD7-8552-D4E02BAADEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B46138-3EF3-CBD7-8552-D4E02BAADEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56B46138-3EF3-CBD7-8552-D4E02BAADEC7} = {17D4FDEA-06F7-DF6C-15B2-621680D14388}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD0E7FB8-FC52-436B-B724-35F0523EB7C8}
+	EndGlobalSection
+EndGlobal
