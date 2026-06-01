@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
 using FirstWebMVC.Data;
 
@@ -27,3 +28,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+=======
+﻿// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+>>>>>>> dfb4db30df0743aa58241e9b4894c3561931b52f

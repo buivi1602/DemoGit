@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "MP6h30LrwXc=",
   "success": true,
   "projectFilePath": "C:\\Users\\ADMINN\\OneDrive\\Documents\\BT PTPMQL\\FirstWebMVC\\FirstWebMVC.csproj",
@@ -185,5 +186,11 @@
     "C:\\Users\\ADMINN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.23\\microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512",
     "C:\\Users\\ADMINN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.23\\microsoft.netcore.app.host.win-x64.8.0.23.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "1Ov06ygCNVw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMINN\\OneDrive\\Documents\\BT PTPMQL\\BT PTPMQL.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> dfb4db30df0743aa58241e9b4894c3561931b52f
   "logs": []
 }
